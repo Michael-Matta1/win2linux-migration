@@ -1,0 +1,105 @@
+/* Main view area - dark background */
+DolphinViewContainer > DolphinView > QAbstractScrollArea {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+/* File/folder list views */
+QListView, QTreeView, QTableView {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border: none;
+    selection-background-color: #0d7377;
+    selection-color: #ffffff;
+    alternate-background-color: #252525;
+}
+
+/* Items on hover */
+QListView::item:hover, QTreeView::item:hover, QTableView::item:hover {
+    background-color: #2d2d2d;
+}
+
+/* Selected items */
+QListView::item:selected, QTreeView::item:selected, QTableView::item:selected {
+    background-color: #0d7377;
+    color: #ffffff;
+}
+
+/* Scrollbars */
+QScrollBar:vertical, QScrollBar:horizontal {
+    background-color: #1e1e1e;
+    width: 12px;
+    height: 12px;
+}
+
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal {
+    background-color: #3e3e3e;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
+    background-color: #4e4e4e;
+}
+
+/* Text input fields */
+QLineEdit, QTextEdit, QPlainTextEdit {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #3e3e3e;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+QLineEdit:focus, QTextEdit:focus, QPlainTextEdit:focus {
+    border: 1px solid #0d7377;
+}
+
+/* Status bar at bottom */
+QStatusBar {
+    background-color: #252525;
+    color: #b0b0b0;
+}
+
+/* Toolbar */
+QToolBar {
+    background-color: #2d2d2d;
+    border: none;
+    spacing: 3px;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #3e3e3e;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
+
+QPushButton:hover {
+    background-color: #3e3e3e;
+}
+
+QPushButton:pressed {
+    background-color: #0d7377;
+}
+
+/* Context menus */
+QMenu {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #3e3e3e;
+}
+
+QMenu::item:selected {
+    background-color: #0d7377;
+}
+
+/* Headers in detailed view */
+QHeaderView::section {
+    background-color: #252525;
+    color: #b0b0b0;
+    border: none;
+    padding: 5px;
+}

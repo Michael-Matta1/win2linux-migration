@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Service
+Icon=kitty
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin,inode/directory
+Actions=OpenInKitty;
+
+[Desktop Action OpenInKitty]
+Name=Open in Kitty
+Icon=kitty
+Exec=~/.local/bin/dolphin-open-kitty.sh %u

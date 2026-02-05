@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Service
+Icon=vscode
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin,inode/directory
+X-KDE-Protocols=file
+Actions=OpenInVSCode;
+
+[Desktop Action OpenInVSCode]
+Name=Open in VS Code
+Icon=vscode
+Exec=~/.local/bin/dolphin-open-vscode.sh %f
