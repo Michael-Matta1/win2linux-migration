@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Visual Studio Code
+Comment=Code editor
+Exec=/opt/vscode/bin/code
+Icon=/opt/vscode/resources/app/resources/linux/code.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;TextEditor;
+StartupWMClass=Code

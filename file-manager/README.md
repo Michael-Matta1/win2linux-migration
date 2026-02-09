@@ -437,6 +437,8 @@ In the **Appearance** tab:
 - **Color scheme:** Select **"darker"** (provides dark base colors)
 - Click **Apply** and **OK**
 
+**⚠️ Important:** In the **Style Sheets** tab, ensure that there are **no style sheets activated**. Any active style sheets can interfere with the dark theme configuration and cause visual inconsistencies.
+
 **3️⃣ Test Dolphin**
 
 Open Dolphin to see the basic dark theme applied. However, you'll notice some areas (especially the file viewing area) may still have light backgrounds. That's where the custom stylesheet comes in!

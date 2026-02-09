@@ -18,6 +18,7 @@ This repository covers the gaps you'll encounter when switching — from missing
   - [🔍 OCR Clipboard](#-ocr-clipboard)
   - [🐈 Open in Kitty (Nautilus)](#-open-in-kitty-nautilus)
   - [💻 Open in VS Code (Nautilus)](#-open-in-vs-code-nautilus)
+  - [📌 Pin Applications to Dock](#-pin-applications-to-dock)
   - [⌨️ Shortcuts Mapping (AutoKey)](#️-shortcuts-mapping-autokey)
 - [Quick Reference Table](#-quick-reference-table)
 - [Distro Compatibility](#-distro-compatibility)
@@ -230,6 +231,32 @@ A Nautilus (GNOME Files) extension that adds **"Open in VS Code"** to the right-
 
 ---
 
+### 📌 Pin Applications to Dock
+
+**[→ Open Guide](pin-to-dock/README.md)**
+
+Create desktop entries to pin any application to your dock when the "Pin to Dock" option is missing. This guide covers manual desktop entry creation for AppImages, custom installations, and applications without automatic integration.
+
+<details>
+<summary><b>What's included</b></summary>
+
+- Understanding desktop entries and why "Pin to Dock" is missing
+- Quick template for creating desktop entries
+- Step-by-step manual creation process
+- Finding application paths and icons
+- Real-world examples (Kitty, VS Code, AppImages, scripts, Flatpak, Snap)
+- Advanced desktop entry options (actions, environment variables, web app launchers)
+- Troubleshooting common issues
+- Complete workflow reference
+
+**Files:**
+- `kitty.desktop` — Desktop entry for Kitty terminal
+- `code.desktop` — Desktop entry for Visual Studio Code
+
+</details>
+
+---
+
 ### ⌨️ Shortcuts Mapping (AutoKey)
 
 **[→ Open Guide](shortcuts-mapping/README.md)**
@@ -262,6 +289,7 @@ Remap Linux keyboard shortcuts to match your Windows muscle memory using AutoKey
 | [🔍 OCR Clipboard](ocr-clipboard/README.md) | PowerToys Text Extractor | Flameshot + Tesseract | Super+Shift+T |
 | [🐈 Open in Kitty](open-kitty/README.md) | "Open in Terminal" | Nautilus extension | Right-click menu |
 | [💻 Open in VS Code](open-vscode/README.md) | "Open with Code" | Nautilus extension | Right-click menu |
+| [📌 Pin to Dock](pin-to-dock/README.md) | Pin to taskbar | Desktop entries | Right-click menu |
 | [⌨️ Shortcuts Mapping](shortcuts-mapping/README.md) | Native shortcuts | AutoKey | Custom |
 
 ---
@@ -341,6 +369,11 @@ win2linux-migration/
 ├── open-vscode/                       ← 💻 Nautilus "Open in VS Code"
 │   ├── README.md
 │   └── open-vscode.py
+│
+├── pin-to-dock/                       ← 📌 Pin apps to dock
+│   ├── README.md
+│   ├── kitty.desktop
+│   └── code.desktop
 │
 └── shortcuts-mapping/                 ← ⌨️ Keyboard shortcut remapping
     └── README.md
