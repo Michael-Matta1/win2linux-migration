@@ -1,6 +1,6 @@
 # 🐈 Open in Kitty — Nautilus Context Menu Extension
 
-A professional Nautilus extension that adds **"Open in Kitty"** to the right-click context menu, allowing you to quickly open the [Kitty terminal](https://sw.kovidgoyal.net/kitty/) in any folder.
+Nautilus extension that adds **"Open in Kitty"** to the right-click context menu, allowing you to quickly open the [Kitty terminal](https://sw.kovidgoyal.net/kitty/) in any folder.
 
 ![Nautilus with Kitty context menu](https://img.shields.io/badge/Nautilus-Extension-blue) ![Python](https://img.shields.io/badge/Python-3.6+-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 
@@ -29,6 +29,10 @@ A professional Nautilus extension that adds **"Open in Kitty"** to the right-cli
 - 🛡️ **Robust error handling** — Graceful failures with helpful error messages
 - 📝 **Clean tooltips** — Shows folder names in menu items
 - 🚀 **Process isolation** — Terminal runs independently of Nautilus
+
+---
+
+> **My terminal recommendation:** I use Kitty for my terminal and I'd recommend [**Kitty**](https://sw.kovidgoyal.net/kitty/) or [**Ghostty**](https://ghostty.org/) if you don't have a favorite terminal yet. If you already have a preferred terminal, you can tweak the script to match what you want. For ideas on how to customize Kitty, check out [my kitty.conf](https://github.com/Michael-Matta1/dev-dotfiles/blob/main/kitty.conf).
 
 ---
 
@@ -513,6 +517,7 @@ Explore other tools in this repository:
 - [🖼️ Area Screenshot (Flameshot)](../area-screenshot/README.md) — Screenshot tool with annotation
 - [📋 Clipboard History (CopyQ)](../clipboard-history/README.md) — Advanced clipboard manager
 - [🐬 Dolphin Service Menus](../dolphin-menus/README.md) — Custom right-click actions for Dolphin
+- [🐚 Editor-Like Shell (zsh-edit-select)](../editor-like-shell/README.md) — Edit your command line like a text editor — Shift+Arrow/mouse selection, copy/cut/paste/undo, and more
 - [📁 File Manager Customization](../file-manager/README.md) — Dolphin/Nautilus themes and settings
 - [🐧 GNOME Desktop Extensions](../gnome-desktop-extensions/README.md) — Windows-like GNOME experience
 - [🔍 OCR Clipboard](../ocr-clipboard/README.md) — Extract text from screenshots

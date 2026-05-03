@@ -470,6 +470,7 @@ Explore other tools in this repository:
 
 - [📋 Clipboard History (CopyQ)](../clipboard-history/README.md) — Advanced clipboard manager
 - [🐬 Dolphin Service Menus](../dolphin-menus/README.md) — Custom right-click actions for Dolphin
+- [🐚 Editor-Like Shell (zsh-edit-select)](../editor-like-shell/README.md) — Edit your command line like a text editor — Shift+Arrow/mouse selection, copy/cut/paste/undo, and more
 - [📁 File Manager Customization](../file-manager/README.md) — Dolphin/Nautilus themes and settings
 - [🐧 GNOME Desktop Extensions](../gnome-desktop-extensions/README.md) — Windows-like GNOME experience
 - [🔍 OCR Clipboard](../ocr-clipboard/README.md) — Extract text from screenshots

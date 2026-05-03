@@ -892,7 +892,8 @@ killall -3 gnome-shell
 
 Explore other customization guides in this repository:
 
-- [🐚 GNOME Desktop Extensions](../gnome-desktop-extensions/README.md) - Configure Dash to Panel for a Windows-like taskbar
+- [🐧 GNOME Desktop Extensions](../gnome-desktop-extensions/README.md) - Configure Dash to Panel for a Windows-like taskbar
+- [🐚 Editor-Like Shell (zsh-edit-select)](../editor-like-shell/README.md) - Edit your command line like a text editor — Shift+Arrow/mouse selection, copy/cut/paste/undo, and more
 - [📁 File Manager Customization](../file-manager/README.md) - Better alternatives to Nautilus (Dolphin, Nemo)
 - [🐈 Open in Kitty (Nautilus)](../open-kitty/README.md) - Add Kitty to context menus
 - [💻 Open in VS Code (Nautilus)](../open-vscode/README.md) - Add VS Code to context menus

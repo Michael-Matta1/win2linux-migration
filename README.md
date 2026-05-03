@@ -13,6 +13,7 @@ This repository covers the gaps you'll encounter when switching — from missing
   - [🖼️ Area Screenshot (Flameshot)](#️-area-screenshot-flameshot)
   - [📋 Clipboard History (CopyQ)](#-clipboard-history-copyq)
   - [🐬 Dolphin Service Menus](#-dolphin-service-menus)
+  - [🐚 Editor-Like Shell (zsh-edit-select)](#-editor-like-shell-zsh-edit-select)
   - [📁 File Manager Customization](#-file-manager-customization)
   - [🐧 GNOME Desktop Extensions](#-gnome-desktop-extensions)
   - [🔍 OCR Clipboard](#-ocr-clipboard)
@@ -52,7 +53,7 @@ This repository documents every solution I've found and configured, packaged int
 Recreate the Windows **Win+Shift+S** screenshot workflow on Linux using Flameshot. This guide covers installation, keyboard shortcut configuration (**Super+Shift+S**), annotation tools, and auto-start setup.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - Flameshot installation across multiple distros
 - Custom keyboard shortcut setup (Super+Shift+S)
@@ -75,7 +76,7 @@ Recreate the Windows **Win+Shift+S** screenshot workflow on Linux using Flamesho
 Bring back the Windows **Win+V** clipboard history experience using CopyQ. This guide sets up **Super+V** for quick clipboard access and **Super+Shift+V** for the full history window, with search, filtering, and multi-format support.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - CopyQ installation and configuration
 - Keyboard shortcuts that mirror Windows (Super+V / Super+Shift+V)
@@ -96,7 +97,7 @@ Bring back the Windows **Win+V** clipboard history experience using CopyQ. This 
 Add **"Open in Kitty"** and **"Open in VS Code"** to Dolphin's right-click context menu. This is the KDE Dolphin equivalent of the Nautilus extensions (open-kitty and open-vscode), using KDE Service Menus with bash wrapper scripts.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - Automated installer script that handles everything
 - Manual installation with step-by-step instructions
@@ -116,6 +117,26 @@ Add **"Open in Kitty"** and **"Open in VS Code"** to Dolphin's right-click conte
 
 ---
 
+### 🐚 Editor-Like Shell (zsh-edit-select)
+
+**[→ Open Guide](editor-like-shell/README.md)**
+
+Get the Linux equivalent of PowerShell behavior, but more powerful and with more options. Make your Zsh command line behave like a full text editor: select text with **Shift+Arrow keys** or your **mouse**, type or paste to instantly replace selections, and use familiar text-editor-like shortcuts for (copy, cut, paste, undo, redo, select all) — all in the terminal. It features seamless mouse integration and multi-line command support. Every keybinding is customizable through an interactive wizard.
+
+<details>
+<summary><b>What's included (Click to Expand)</b></summary>
+
+- Introduction to zsh-edit-select and its Windows-like shortcuts
+- Quick-start with the auto-installer (single command, handles everything)
+- Manual installation instructions for all major plugin managers
+- Terminal configuration overview (Kitty, Alacritty, WezTerm, VS Code, Windows Terminal)
+- Configuration wizard reference
+- Link to the full plugin documentation
+
+</details>
+
+---
+
 ### 📁 File Manager Customization
 
 **[→ Open Guide](file-manager/README.md)**
@@ -123,7 +144,7 @@ Add **"Open in Kitty"** and **"Open in VS Code"** to Dolphin's right-click conte
 A guide to choosing and configuring a file manager that feels like Windows Explorer. Covers Dolphin (recommended) and Nemo, including installation on GNOME, Qt theming, dark mode stylesheet, shell aliases, and keyboard shortcuts.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - Comparison of file manager options (Dolphin, Nemo, Thunar, etc.)
 - Dolphin installation on GNOME-based systems with KDE dependency setup
@@ -147,7 +168,7 @@ A guide to choosing and configuring a file manager that feels like Windows Explo
 Transform the GNOME desktop to closely match the Windows experience. This guide covers essential extensions like Dash to Panel (Windows-style taskbar), Blur my Shell, ArcMenu (Start menu), and more — with detailed configuration instructions for each.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - GNOME Tweaks and Extension Manager installation
 - **Dash to Panel** — Windows-style taskbar with window previews and grouping
@@ -169,7 +190,7 @@ Transform the GNOME desktop to closely match the Windows experience. This guide 
 A Linux alternative to Windows **PowerToys Text Extractor**. Take a screenshot of any area on your screen, extract text using OCR (Tesseract), and copy it directly to your clipboard — all with a single keyboard shortcut. The script auto-detects X11 or Wayland and uses the appropriate clipboard command.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - OCR script with automatic X11/Wayland detection
 - Dependency installation (Flameshot, Tesseract, xclip/wl-clipboard)
@@ -194,7 +215,7 @@ A Linux alternative to Windows **PowerToys Text Extractor**. Take a screenshot o
 A Nautilus (GNOME Files) extension that adds **"Open in Kitty"** to the right-click context menu. Quickly open any folder in the Kitty terminal directly from your file manager.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - Python Nautilus extension with automatic Kitty detection
 - Installation via download or manual creation
@@ -216,7 +237,7 @@ A Nautilus (GNOME Files) extension that adds **"Open in Kitty"** to the right-cl
 A Nautilus (GNOME Files) extension that adds **"Open in VS Code"** to the right-click context menu for folders. Open any directory in Visual Studio Code directly from your file manager.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - Python Nautilus extension with automatic VS Code detection
 - Supports code, code-insiders, and VSCodium
@@ -238,7 +259,7 @@ A Nautilus (GNOME Files) extension that adds **"Open in VS Code"** to the right-
 Create desktop entries to pin any application to your dock when the "Pin to Dock" option is missing. This guide covers manual desktop entry creation for AppImages, custom installations, and applications without automatic integration.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - Understanding desktop entries and why "Pin to Dock" is missing
 - Quick template for creating desktop entries
@@ -264,7 +285,7 @@ Create desktop entries to pin any application to your dock when the "Pin to Dock
 Remap Linux keyboard shortcuts to match your Windows muscle memory using AutoKey. This guide shows how to map shortcuts like **Alt+D** (address bar), **F2** (rename), and other Windows conventions to their Linux equivalents — scoped to specific applications using window filters.
 
 <details>
-<summary><b>What's included</b></summary>
+<summary><b>What's included (Click to Expand)</b></summary>
 
 - AutoKey installation and accessibility setup
 - Window filter configuration (WM_CLASS detection for Nautilus, Dolphin, etc.)
@@ -284,6 +305,7 @@ Remap Linux keyboard shortcuts to match your Windows muscle memory using AutoKey
 | [🖼️ Area Screenshot](area-screenshot/README.md) | Win+Shift+S | Flameshot | Super+Shift+S |
 | [📋 Clipboard History](clipboard-history/README.md) | Win+V | CopyQ | Super+V |
 | [🐬 Dolphin Service Menus](dolphin-menus/README.md) | Explorer right-click | KDE Service Menus | Right-click menu |
+| [🐚 Editor-Like Shell](editor-like-shell/README.md) | PowerShell behavior (but more powerful with more options: Shift+Arrow, mouse selection, copy/cut/paste/undo) | zsh-edit-select | Shift+Arrow / Ctrl+C/V/X/Z |
 | [📁 File Manager](file-manager/README.md) | Windows Explorer | Dolphin / Nemo | — |
 | [🐧 GNOME Extensions](gnome-desktop-extensions/README.md) | Windows desktop layout | GNOME Extensions | — |
 | [🔍 OCR Clipboard](ocr-clipboard/README.md) | PowerToys Text Extractor | Flameshot + Tesseract | Super+Shift+T |
@@ -320,9 +342,10 @@ These guides were developed on **Pop!_OS** (Ubuntu-based) for a machine learning
 3. **[Area Screenshot](area-screenshot/README.md)** — Get your screenshot shortcut working (Win+Shift+S → Super+Shift+S)
 4. **[Clipboard History](clipboard-history/README.md)** — Enable clipboard history (Win+V → Super+V)
 5. **[Shortcuts Mapping](shortcuts-mapping/README.md)** — Remap any remaining keyboard shortcuts
-6. **[Open in Kitty](open-kitty/README.md)** / **[Open in VS Code](open-vscode/README.md)** — Add terminal and editor context menu entries
-7. **[Dolphin Service Menus](dolphin-menus/README.md)** — If using Dolphin instead of Nautilus, add context menu entries
-8. **[OCR Clipboard](ocr-clipboard/README.md)** — Add text extraction from screenshots
+6. **[Editor-Like Shell](editor-like-shell/README.md)** — The Linux equivalent of PowerShell, but more powerful and with more options: Shift+Arrow/mouse selection, copy/cut/paste/undo, and more.
+7. **[Open in Kitty](open-kitty/README.md)** / **[Open in VS Code](open-vscode/README.md)** — Add terminal and editor context menu entries
+8. **[Dolphin Service Menus](dolphin-menus/README.md)** — If using Dolphin instead of Nautilus, add context menu entries
+9. **[OCR Clipboard](ocr-clipboard/README.md)** — Add text extraction from screenshots
 
 Each guide is self-contained — you can follow them in any order or pick only the ones you need.
 
@@ -349,6 +372,9 @@ win2linux-migration/
 │   ├── dolphin-open-vscode.sh
 │   ├── open-in-kitty.desktop
 │   └── open-in-vscode.desktop
+│
+├── editor-like-shell/                 ← 🐚 zsh-edit-select (editor-like command line)
+│   └── README.md
 │
 ├── file-manager/                      ← 📁 File manager selection & config
 │   ├── README.md

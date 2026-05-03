@@ -2,6 +2,8 @@
 
 After decades of using the same keyboard shortcuts in Windows, they become second nature—making the transition to Linux challenging. This guide shows you how to remap Linux keyboard shortcuts to match those you're familiar with in Windows, making your Linux experience feel more natural and productive.
 
+> **Tip:** If you use want to edit commands like PowerShell — with Shift+Arrow or mouse selection, typing to replace selections, copy/cut/paste/undo — check out the [Editor-Like Shell guide](../editor-like-shell/README.md). It complements AutoKey by handling shortcuts at the shell level.
+
 ---
 
 ## 📑 **Table of Contents**
@@ -593,8 +595,11 @@ Explore other tools in this repository:
 - [🖼️ Area Screenshot (Flameshot)](../area-screenshot/README.md) — Screenshot tool with annotation
 - [📋 Clipboard History (CopyQ)](../clipboard-history/README.md) — Advanced clipboard manager
 - [🐬 Dolphin Service Menus](../dolphin-menus/README.md) — Custom right-click actions for Dolphin
+- [🐚 Editor-Like Shell (zsh-edit-select)](../editor-like-shell/README.md) — Edit your command line like a text editor — Shift+Arrow/mouse selection, copy/cut/paste/undo, and more
 - [📁 File Manager Customization](../file-manager/README.md) — Dolphin/Nautilus themes and settings
 - [🐧 GNOME Desktop Extensions](../gnome-desktop-extensions/README.md) — Windows-like GNOME experience
 - [🔍 OCR Clipboard](../ocr-clipboard/README.md) — Extract text from screenshots
 - [🐈 Open in Kitty (Nautilus)](../open-kitty/README.md) — Right-click "Open in Kitty" for Nautilus
 - [💻 Open in VS Code (Nautilus)](../open-vscode/README.md) — Right-click "Open in VS Code" for Nautilus
+
+

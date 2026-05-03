@@ -36,6 +36,8 @@ Both achieve the same goal: quick access to Kitty terminal and VS Code from your
 
 ### 🐈 **Kitty Terminal Integration**
 
+> **My terminal:** I use Kitty for my terminal and I'd recommend [**Kitty**](https://sw.kovidgoyal.net/kitty/) or [**Ghostty**](https://ghostty.org/) if you don't have a favorite terminal yet. If you already have a preferred terminal, you can tweak the scripts to match what you want. For ideas on how to customize Kitty, you can check out [my kitty.conf](https://github.com/Michael-Matta1/dev-dotfiles/blob/main/kitty.conf).
+
 - ✅ **Smart context detection** — Adapts based on folder type (local/remote/admin)
 - ✅ **Local directories** — Opens Kitty terminal in the selected folder
 - ✅ **Remote filesystems** — SSH into SFTP/FTP/SSH locations automatically
@@ -1238,6 +1240,7 @@ Explore other tools in this repository:
 
 - [🖼️ Area Screenshot (Flameshot)](../area-screenshot/README.md) — Screenshot tool with annotation
 - [📋 Clipboard History (CopyQ)](../clipboard-history/README.md) — Advanced clipboard manager
+- [🐚 Editor-Like Shell (zsh-edit-select)](../editor-like-shell/README.md) — Edit your command line like a text editor — Shift+Arrow/mouse selection, copy/cut/paste/undo, and more
 - [📁 File Manager Customization](../file-manager/README.md) — Dolphin/Nautilus themes and settings
 - [🐧 GNOME Desktop Extensions](../gnome-desktop-extensions/README.md) — Windows-like GNOME experience
 - [🔍 OCR Clipboard](../ocr-clipboard/README.md) — Extract text from screenshots

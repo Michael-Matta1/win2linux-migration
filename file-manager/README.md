@@ -4,6 +4,8 @@ As a Windows user transitioning to Linux, you'll quickly notice that **Nautilus*
 
 This guide will help you choose and configure a feature-rich file manager that feels more like home.
 
+> **Note:** If you are already using **KDE Plasma** as your desktop environment, Dolphin comes pre-installed — you don't need to follow this guide. This installation guide is for users on **other desktop environments** (GNOME, XFCE, etc.) who want to use Dolphin.
+
 ---
 
 ## 📑 **Table of Contents**
@@ -215,18 +217,17 @@ Then select `gdm3` when prompted.
 </details>
 
 <details>
-<summary><b>Step 2: Install Plasma Integration (Optional but Recommended)</b></summary>
+<summary><b>Step 2: Install Plasma Integration (Optional)</b></summary>
 
-For better integration with GNOME, install:
+For Full integration, install:
 ```bash
 sudo apt install plasma-integration
 ```
 
 **What this provides:**
 
-- Better file dialogs in KDE apps
-- Improved theme consistency
-- Qt application integration with GNOME
+- Full file dialogs in KDE apps
+- Complete theme consistency
 
 </details>
 
@@ -1614,6 +1615,7 @@ Explore other tools in this repository:
 - [🖼️ Area Screenshot (Flameshot)](../area-screenshot/README.md) — Screenshot tool with annotation
 - [📋 Clipboard History (CopyQ)](../clipboard-history/README.md) — Advanced clipboard manager
 - [🐬 Dolphin Service Menus](../dolphin-menus/README.md) — Custom right-click actions for Dolphin
+- [🐚 Editor-Like Shell (zsh-edit-select)](../editor-like-shell/README.md) — Edit your command line like a text editor — Shift+Arrow/mouse selection, copy/cut/paste/undo, and more
 - [🐧 GNOME Desktop Extensions](../gnome-desktop-extensions/README.md) — Windows-like GNOME experience
 - [🔍 OCR Clipboard](../ocr-clipboard/README.md) — Extract text from screenshots
 - [🐈 Open in Kitty (Nautilus)](../open-kitty/README.md) — Right-click "Open in Kitty" for Nautilus
