@@ -1564,45 +1564,55 @@ Then select the icon theme in:
 
 <details>
 <summary><b>For Dolphin</b></summary>
+
+#### Install:
 ```bash
-# Install
 sudo apt install dolphin kde-standard kde-cli-tools kio kio-extras breeze-icon-theme
 sudo apt install plasma-integration  # Optional but recommended
 sudo apt install qt5-style-plugins qt5ct
+```
 
-# Configure Qt theme environment variable
+#### Configure Qt theme environment variable:
+```bash
 echo "QT_QPA_PLATFORMTHEME=qt5ct" | sudo tee -a /etc/environment
+```
 
-# Set as default file manager (all MIME types for full compatibility)
+#### Set as default file manager (all MIME types for full compatibility):
+```bash
 xdg-mime default org.kde.dolphin.desktop inode/directory
 xdg-mime default org.kde.dolphin.desktop application/x-directory
 xdg-mime default org.kde.dolphin.desktop x-directory/normal
 xdg-mime default org.kde.dolphin.desktop application/x-gnome-saved-search
-
-# Log out and back in, then:
-# 1. Run qt5ct to configure theme (choose Fusion style, darker palette)
-# 2. Optionally apply dark theme (see section 3.3 for full dark theme setup)
 ```
+
+#### Log out and back in, then:
+1. Run `qt5ct` to configure theme (choose Fusion style, darker palette)
+2. Optionally apply dark theme (see section 3.3 for full dark theme setup)
 
 </details>
 
 <details>
 <summary><b>For Nemo</b></summary>
+
+#### Install:
 ```bash
-# Install
 sudo apt install nemo nemo-fileroller
+```
 
-# Optional plugins for enhanced functionality
+#### Optional plugins for enhanced functionality:
+```bash
 sudo apt install nemo-image-converter nemo-audio-tab
+```
 
-# Set as default file manager (all MIME types for full compatibility)
+#### Set as default file manager (all MIME types for full compatibility):
+```bash
 xdg-mime default nemo.desktop inode/directory
 xdg-mime default nemo.desktop application/x-directory
 xdg-mime default nemo.desktop x-directory/normal
 xdg-mime default nemo.desktop application/x-gnome-saved-search
-
-# Done! No additional configuration needed
 ```
+
+Done! No additional configuration needed.
 
 </details>
 

@@ -45,6 +45,8 @@ You'll need these tools installed on your system:
 - **xclip** - Clipboard management (X11) or **wl-clipboard** (Wayland) — the script auto-detects which to use
 - **libnotify-bin** - Desktop notifications
 - **pulseaudio-utils** or **pipewire** - Sound playback (optional)
+- **imagemagick** - Image preprocessing (grayscale, dark-mode detection, upscaling, sharpening) — required only if you use **`ocr_clipboard_v2.sh`**
+- **bc** - Command-line calculator used for the dark/light detection check — required only if you use **`ocr_clipboard_v2.sh`**
 
 > **📸 Note about Flameshot:** Flameshot is a screenshot tool that offers many more features than default screenshot utilities (annotations, arrows, blur, pixelate, text, etc.). You can also set up Flameshot for regular screenshots with keyboard shortcuts. See the [Area Screenshot guide](../area-screenshot/README.md) for a complete setup walkthrough.
 
@@ -73,6 +75,11 @@ sudo apt update
 sudo apt install flameshot tesseract-ocr xclip libnotify-bin pulseaudio-utils
 ```
 
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo apt install imagemagick bc
+> ```
+
 </details>
 
 <details>
@@ -81,6 +88,11 @@ sudo apt install flameshot tesseract-ocr xclip libnotify-bin pulseaudio-utils
 ```bash
 sudo dnf install flameshot tesseract xclip libnotify pulseaudio-utils
 ```
+
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo dnf install ImageMagick bc
+> ```
 
 </details>
 
@@ -91,6 +103,11 @@ sudo dnf install flameshot tesseract xclip libnotify pulseaudio-utils
 sudo pacman -S flameshot tesseract xclip libnotify pulseaudio
 ```
 
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo pacman -S imagemagick bc
+> ```
+
 </details>
 
 <details>
@@ -100,6 +117,11 @@ sudo pacman -S flameshot tesseract xclip libnotify pulseaudio
 sudo zypper install flameshot tesseract-ocr xclip libnotify-tools pulseaudio-utils
 ```
 
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo zypper install ImageMagick bc
+> ```
+
 </details>
 
 <details>
@@ -108,6 +130,11 @@ sudo zypper install flameshot tesseract-ocr xclip libnotify-tools pulseaudio-uti
 ```bash
 sudo xbps-install -S flameshot tesseract xclip libnotify pulseaudio-utils
 ```
+
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo xbps-install -S ImageMagick bc
+> ```
 
 </details>
 
@@ -121,6 +148,11 @@ sudo apt update
 sudo apt install flameshot tesseract-ocr wl-clipboard libnotify-bin pulseaudio-utils
 ```
 
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo apt install imagemagick bc
+> ```
+
 </details>
 
 <details>
@@ -129,6 +161,11 @@ sudo apt install flameshot tesseract-ocr wl-clipboard libnotify-bin pulseaudio-u
 ```bash
 sudo dnf install flameshot tesseract wl-clipboard libnotify pulseaudio-utils
 ```
+
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo dnf install ImageMagick bc
+> ```
 
 </details>
 
@@ -139,6 +176,11 @@ sudo dnf install flameshot tesseract wl-clipboard libnotify pulseaudio-utils
 sudo pacman -S flameshot tesseract wl-clipboard libnotify pulseaudio
 ```
 
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo pacman -S imagemagick bc
+> ```
+
 </details>
 
 <details>
@@ -148,6 +190,11 @@ sudo pacman -S flameshot tesseract wl-clipboard libnotify pulseaudio
 sudo zypper install flameshot tesseract-ocr wl-clipboard libnotify-tools pulseaudio-utils
 ```
 
+> If you plan to use `ocr_clipboard_v2.sh`, also install:
+> ```bash
+> sudo zypper install ImageMagick bc
+> ```
+
 </details>
 
 ---
@@ -156,24 +203,24 @@ sudo zypper install flameshot tesseract-ocr wl-clipboard libnotify-tools pulseau
 
 ### 1. Create the Script
 
-Two script names are provided for flexibility (both are identical and auto-detect X11/Wayland):
-- **`ocr-screenshot.sh`** - Descriptive name emphasizing it's for screenshots
-- **`ocr_clipboard.sh`** - Alternative name emphasizing clipboard functionality
+Two script versions are provided:
+- **`ocr_clipboard.sh`** - The original script. Lightweight, fast, minimal dependencies.
+- **`ocr_clipboard_v2.sh`** - An enhanced version that preprocesses the screenshot with ImageMagick (grayscale, dark-mode inversion, upscaling, contrast stretch, sharpening) before running it through Tesseract. This provides better text detection quality, at the cost of being slower by a few milliseconds. It's optimized for English characters via a `WHITELIST` variable in the script, but this can be edited to match your desired language. See [Dependencies](#-dependencies) for the extra packages it needs.
 
-You can install one or both — they have the same code and functionality.
+You can install one or both — pick whichever fits your needs, or keep both and switch between them.
 
 **Option 1: Download the scripts (Recommended)**
 
 ```bash
 mkdir -p ~/.local/bin
 
-# Download ocr-screenshot.sh
-curl -o ~/.local/bin/ocr-screenshot.sh https://raw.githubusercontent.com/Michael-Matta1/win2linux-migration/main/ocr-clipboard/ocr-screenshot.sh
-chmod +x ~/.local/bin/ocr-screenshot.sh
-
-# Download ocr_clipboard.sh (alternative name, same functionality)
+# Download ocr_clipboard.sh
 curl -o ~/.local/bin/ocr_clipboard.sh https://raw.githubusercontent.com/Michael-Matta1/win2linux-migration/main/ocr-clipboard/ocr_clipboard.sh
 chmod +x ~/.local/bin/ocr_clipboard.sh
+
+# Download ocr_clipboard_v2.sh (better text detection quality, needs imagemagick + bc)
+curl -o ~/.local/bin/ocr_clipboard_v2.sh https://raw.githubusercontent.com/Michael-Matta1/win2linux-migration/main/ocr-clipboard/ocr_clipboard_v2.sh
+chmod +x ~/.local/bin/ocr_clipboard_v2.sh
 ```
 
 > **Note:** Both scripts automatically detect whether you are running X11 or Wayland and use the appropriate clipboard command (`xclip` or `wl-copy`). No manual editing required.
@@ -181,21 +228,21 @@ chmod +x ~/.local/bin/ocr_clipboard.sh
 <details>
 <summary><b>Or create the scripts manually</b></summary>
 
-Both scripts have identical code. You can create one or both depending on your naming preference.
+The two scripts have different code. Create one or both depending on which you want.
 
 **Create the script file(s):**
 
 ```bash
 mkdir -p ~/.local/bin
 
-# Create ocr-screenshot.sh (or choose the name you prefer)
-nano ~/.local/bin/ocr-screenshot.sh
-
-# Or create ocr_clipboard.sh
+# Create ocr_clipboard.sh
 nano ~/.local/bin/ocr_clipboard.sh
+
+# And/or create ocr_clipboard_v2.sh
+nano ~/.local/bin/ocr_clipboard_v2.sh
 ```
 
-**Copy this content into the file(s):**
+**Copy this content into `ocr_clipboard.sh`:**
 
 ```bash
 #!/bin/bash
@@ -224,14 +271,84 @@ notify-send -t 3000 "OCR Complete ✓" "$preview..."
 paplay /usr/share/sounds/freedesktop/stereo/complete.oga 2>/dev/null &
 ```
 
+**Copy this content into `ocr_clipboard_v2.sh`:**
+
+```bash
+#!/bin/bash
+
+raw_image=$(mktemp --suffix=.png)
+proc_image=$(mktemp --suffix=.pgm)
+trap 'rm -f "$raw_image" "$proc_image"' EXIT
+
+# Capture screenshot area
+flameshot gui --raw 2>/dev/null > "$raw_image"
+
+# Quick dark/light check on a tiny sampled thumbnail — cheap regardless of
+# how big the actual capture is
+mean=$(convert "$raw_image" -colorspace Gray -sample 32x32 -format "%[fx:mean]" info: 2>/dev/null)
+negate_flag=""
+if [ -n "$mean" ] && (( $(echo "$mean < 0.5" | bc -l) )); then
+    negate_flag="-negate"
+fi
+
+# Single pass: grayscale, invert if dark-mode, upscale small captures for
+# quality, cap oversized captures (multi-monitor/4K grabs) so neither
+# ImageMagick nor tesseract waste time on more pixels than OCR needs,
+# contrast stretch, gentle sharpen
+convert "$raw_image" -colorspace Gray $negate_flag \
+    -filter Lanczos -resize '1400x1400<' -resize '2400x2400>' \
+    -contrast-stretch 0.5%x0.5% \
+    -unsharp 0x0.75+0.75+0.02 \
+    "$proc_image" 2>/dev/null
+
+WHITELIST=$'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 !"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+# OCR — --oem 1 forces LSTM-only, skipping the slower legacy engine pass
+text=$(tesseract "$proc_image" stdout \
+    -l eng --oem 1 --psm 6 \
+    -c user_defined_dpi=300 \
+    -c tessedit_char_whitelist="$WHITELIST" \
+    -c load_system_dawg=0 \
+    -c load_freq_dawg=0 \
+    -c load_punc_dawg=0 \
+    -c load_number_dawg=0 \
+    -c load_unambig_dawg=0 \
+    -c load_bigram_dawg=0 \
+    -c tessedit_enable_dict_correction=0 \
+    -c preserve_interword_spaces=1 \
+    2>/dev/null | tr -d '\f')
+
+# Check if we got text
+if [ -z "$text" ]; then
+    notify-send -u normal "OCR" "Screenshot cancelled or no text found"
+    exit 0
+fi
+
+# Copy to clipboard (auto-detect X11 or Wayland)
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+    echo -n "$text" | wl-copy
+else
+    echo -n "$text" | xclip -selection clipboard -i
+fi
+
+# Show notification with preview (first 100 chars)
+preview=$(printf '%s' "$text" | head -c 100 | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+notify-send -t 3000 -- "OCR Complete ✓" "$preview..."
+
+# Optional: Play sound
+paplay /usr/share/sounds/freedesktop/stereo/complete.oga 2>/dev/null &
+```
+
+> **Note:** `ocr_clipboard_v2.sh` is optimized for English characters via the `WHITELIST` variable. If you want to recognize another language, edit `WHITELIST` to include the characters you need (and update the `-l eng` flag with the appropriate Tesseract language code — see [Multi-Language OCR Support](#-multi-language-ocr-support-optional)).
+
 **Make executable:**
 
 ```bash
-# Make ocr-screenshot.sh executable
-chmod +x ~/.local/bin/ocr-screenshot.sh
-
-# Or make ocr_clipboard.sh executable (if you created it)
+# Make ocr_clipboard.sh executable
 chmod +x ~/.local/bin/ocr_clipboard.sh
+
+# And/or make ocr_clipboard_v2.sh executable
+chmod +x ~/.local/bin/ocr_clipboard_v2.sh
 ```
 
 </details>
@@ -241,11 +358,11 @@ chmod +x ~/.local/bin/ocr_clipboard.sh
 Run it manually to make sure it works:
 
 ```bash
-# Test ocr-screenshot.sh
-~/.local/bin/ocr-screenshot.sh
-
-# Or test ocr_clipboard.sh
+# Test ocr_clipboard.sh
 ~/.local/bin/ocr_clipboard.sh
+
+# Or test ocr_clipboard_v2.sh
+~/.local/bin/ocr_clipboard_v2.sh
 ```
 
 You should see the Flameshot selection interface appear. Select some text on your screen and it should be copied to your clipboard.
@@ -289,7 +406,7 @@ flameshot &
 
 Now bind the script to a keyboard shortcut so you can trigger it anytime.
 
-> **Note:** The examples below use `ocr-screenshot.sh`. If you created `ocr_clipboard.sh` instead, replace the script name in the command paths accordingly.
+> **Note:** The examples below use `ocr_clipboard.sh`. If you're using `ocr_clipboard_v2.sh` instead, replace the script name in the command paths accordingly.
 
 **Choose your desktop environment:**
 
@@ -300,7 +417,7 @@ Now bind the script to a keyboard shortcut so you can trigger it anytime.
 2. Scroll down and click **"+"** or **"Add Custom Shortcut"**
 3. Fill in the details:
    - **Name**: `OCR Screenshot`
-   - **Command**: `/home/YOUR_USERNAME/.local/bin/ocr-screenshot.sh`
+   - **Command**: `/home/YOUR_USERNAME/.local/bin/ocr_clipboard.sh`
      - (Replace `YOUR_USERNAME` with your actual username, or use the full path)
    - **Shortcut**: Click "Set Shortcut" and press your desired key combination
      - Suggested: `Super+Shift+T` or `Super+Shift+O`
@@ -314,7 +431,7 @@ Now bind the script to a keyboard shortcut so you can trigger it anytime.
 1. Open **System Settings** → **Shortcuts** → **Custom Shortcuts**
 2. Click **Edit** → **New** → **Global Shortcut** → **Command/URL**
 3. In the **Trigger** tab, set your keyboard shortcut
-4. In the **Action** tab, enter: `/home/YOUR_USERNAME/.local/bin/ocr-screenshot.sh`
+4. In the **Action** tab, enter: `/home/YOUR_USERNAME/.local/bin/ocr_clipboard.sh`
 5. Click **Apply**
 
 </details>
@@ -324,7 +441,7 @@ Now bind the script to a keyboard shortcut so you can trigger it anytime.
 
 1. Open **Settings** → **Keyboard** → **Application Shortcuts**
 2. Click **Add**
-3. Enter command: `/home/YOUR_USERNAME/.local/bin/ocr-screenshot.sh`
+3. Enter command: `/home/YOUR_USERNAME/.local/bin/ocr_clipboard.sh`
 4. Click **OK** and press your desired key combination
 
 </details>
@@ -335,7 +452,7 @@ Now bind the script to a keyboard shortcut so you can trigger it anytime.
 Add this line to your config file (`~/.config/i3/config` or `~/.config/sway/config`):
 
 ```bash
-bindsym $mod+Shift+t exec ~/.local/bin/ocr-screenshot.sh
+bindsym $mod+Shift+t exec ~/.local/bin/ocr_clipboard.sh
 ```
 
 Then reload your config: `i3-msg reload` or `swaymsg reload`
@@ -415,7 +532,7 @@ sudo zypper install tesseract-ocr-traineddata-arabic    # Arabic
 
 ### Modify the Script for Multi-Language
 
-Edit your script and change this line:
+**If you're using `ocr_clipboard.sh`:** edit the script and change this line:
 
 ```bash
 text=$(flameshot gui --raw 2>/dev/null | tesseract stdin stdout --psm 6 2>/dev/null | tr -d '\f')
@@ -428,6 +545,8 @@ text=$(flameshot gui --raw 2>/dev/null | tesseract stdin stdout -l eng+ara+fra -
 ```
 
 This example enables English, Arabic, and French simultaneously.
+
+**If you're using `ocr_clipboard_v2.sh`:** it's optimized for English out of the box, so two edits are needed. Update the `-l eng` flag the same way as above (e.g. `-l eng+ara+fra`), and also expand the `WHITELIST` variable to include the characters of your target language(s) — otherwise Tesseract will still discard any recognized character that isn't in the whitelist.
 
 ---
 
@@ -504,7 +623,7 @@ Create multiple scripts for different scenarios if needed!
 <summary><b>"Command not found" when pressing shortcut</b></summary>
 
 - Make sure the path in your keyboard shortcut uses your full username
-- Try using absolute path: `/home/username/.local/bin/ocr-screenshot.sh`
+- Try using absolute path: `/home/username/.local/bin/ocr_clipboard.sh`
 - Check if `~/.local/bin` is in your PATH: `echo $PATH`
 
 </details>
